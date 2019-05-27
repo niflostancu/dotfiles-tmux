@@ -12,7 +12,7 @@ mkdir -p "$CAPTURE_PATH" || {
 }
 
 tmux set-environment -g "TMUX_PANE_RESTORE_CMD" "$CURRENT_DIR/scripts/restore-pane.sh"
-tmux set-option -g "default-command" "$CURRENT_DIR/scripts/restore-pane.sh; exec $SHELL"
+# tmux set-option -g "default-command" "$CURRENT_DIR/scripts/restore-pane.sh; exec $SHELL"
 
 # listen on pane change events and save the old pane's contents to file
 TMUX_SAVE_CMD="'$CURRENT_DIR/scripts/save-pane.sh'"
