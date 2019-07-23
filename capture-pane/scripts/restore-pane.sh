@@ -8,12 +8,7 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 [[ -n "$TMUX_PANE" ]] || exit 0
 
-# echo "DAAA"
-
 TARGET_PANE=$(tmux display -t "$TMUX_PANE" -p "#{session_name}:#{window_index}.#{pane_index}")
-
-# echo "RESTORE $TARGET_PANE"
-
 TARGET_FILE="$CAPTURE_PATH/pane-${TARGET_PANE}"
 
 if [[ -f "$TARGET_FILE" ]]; then
